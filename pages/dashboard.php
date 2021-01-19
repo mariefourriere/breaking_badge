@@ -1,5 +1,22 @@
+<?php 
+ini_set('display_errors','on');
+error_reporting(E_ALL);
 
-<!DOCTYPE html>
+include ('../components/functions.php');
+
+getBadges();
+
+getUsers();
+
+?>
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -58,4 +75,4 @@
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
-</html>
+</html> -->

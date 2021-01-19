@@ -35,9 +35,9 @@
       $_SESSION['account_type'] = $results['account_type'];
       $_SESSION['email'] = $email;
 
-      return true
+      return true;
     }
-    return false
+    return false;
   }
 
   function logout(){
@@ -46,11 +46,21 @@
   }
 
   function getBadges(){
-
+    session_start_once();
+    $cursor = createCursor();
+    $query_badge_normie = $cursor->query('SELECT name_badge, description_badge FROM badge JOIN users_has_badge ON badge.id_badge = users_has_badge.badge_id');
+    $results_badge_normie = $query_badge_normie->fetch();
+    echo $results_badge_normie['name_badge'] . $results_badge_normie['description_badge'];
+    
   }
 
   function getUsers(){
-
+    session_start_once();
+    $cursor = createCursor();
+    $query_users = $cursor->query('SELECT lastname, firstname FROM users JOIN users_has_badge ON users.id = users_has_badge.users_id');
+    $results_users = $query_users->fetch();
+    echo $results_users['firstname'];
+    
   }
 
   function createBadge(){
