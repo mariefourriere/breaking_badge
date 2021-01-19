@@ -16,7 +16,7 @@ getUsers();
 
 
 
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -75,4 +75,4 @@ getUsers();
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
-</html> -->
+</html>

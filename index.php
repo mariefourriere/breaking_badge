@@ -13,8 +13,6 @@
   <title>Breaking Badge</title>
 </head>
 <body>
- 
-
-  coucou
+  <h1>coucou</h1>
 </body>
 </html>
