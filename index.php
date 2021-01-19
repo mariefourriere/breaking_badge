@@ -13,6 +13,6 @@
   <title>Breaking Badge</title>
 </head>
 <body>
-  <?php include_once('components/router.php'); ?>
+  <h1>coucou</h1>
 </body>
 </html>
