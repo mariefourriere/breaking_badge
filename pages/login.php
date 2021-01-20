@@ -1,7 +1,14 @@
 <?php
+//deux points on ne touche plus
+include('../components/functions.php');
 
-include('components/functions.php');
+if(!empty($_POST['email'])){
+    if(login($_POST['email'], $_POST['password']))
+    {
+        header('Location: dashboard.php');
+    }
 
+};
 
 
 ?>
@@ -14,7 +21,7 @@ include('components/functions.php');
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="pages/style.css">
+    <link rel="stylesheet" href="style.css">
     <title>login page</title>
 </head>
 
@@ -30,7 +37,7 @@ include('components/functions.php');
                         <div class="col-md-8 col-10 my-5">
                             <h3 class="mb-5 text-center heading">Welcome back !</h3>
                             <h6 class="msg-info">Please login to your account</h6>
-
+<form method="post">
                             <div class="form-group"> 
                                 <label class="form-control-label text-muted">Email</label> 
                                 <input type="text" id="email" name="email" placeholder="Email" class="form-control"> 
@@ -38,11 +45,12 @@ include('components/functions.php');
 
                             <div class="form-group"> 
                                 <label class="form-control-label text-muted">Password</label> 
-                                <input type="password" id="psw" name="psw" placeholder="Password" class="form-control"> 
+                                <input type="password" id="psw" name="password" placeholder="Password" class="form-control"> 
                             </div>
 
                             <div class="row justify-content-center my-3 px-3"> 
-                                <button class="btn-block btn-color">Login</button> 
+                                <button class="btn-block btn-color" type="submit">Login</button> 
+</form>
                             </div>
                             <div class="row justify-content-center my-2"> <a href="#"><small class="text-muted">Forgot Password?</small></a> </div>
                         </div>
