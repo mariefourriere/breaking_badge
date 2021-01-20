@@ -20,7 +20,7 @@
                 <ul class="nav navbar-nav text-light" id="accordionSidebar">
                     <li class="nav-item"><a class="nav-link" href="profile.php"><i class="fa fa-user"></i><span>Profile</span></a></li>
                     <li class="nav-item"><a class="nav-link active" href="dashboard.php"><i class="fa fa-trophy"></i><span>Badges</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="login.php"><i class="fa fa-user-circle"></i><span>Login</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="logout.php"><i class="fa fa-user-circle"></i><span>Logout</span></a></li>
                     <li class="nav-item"></li>
                 </ul>
                 <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
@@ -44,7 +44,8 @@
                 </nav>
                 
                 <?php 
-                        include('normie.php');
+                      include('../components/functions.php');
+                      isNormie();
                 ?>
            
             </div>

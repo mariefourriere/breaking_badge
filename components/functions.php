@@ -20,18 +20,30 @@
     return isAuthenticated && $_SESSION['account_type'] == 'ADMIN';
   }
 
+  function isNormie(){
+    session_start_once();
+    
+      if($_SESSION['account_type'] === 'ADMIN'){
+          include('admin.php');
+      }else {
+        include('normie.php');
+      }
+      
+  }
+
+
   function login($email, $password){
     session_start_once();
 
     $cursor = createCursor();
-    $query = $cursor->prepare('SELECT id, password from users WHERE email=?');
+    $query = $cursor->prepare('SELECT id, password, account_type from users WHERE email=?');
     $query->execute([$email]);
     $results = $query->fetch();
     
     // $cursor->closeCursor();
 
     if(password_verify($password, $results['password'])){
-      $_SESSION['user_id'] = $results['id'];
+      $_SESSION['id'] = $results['id'];
       $_SESSION['account_type'] = $results['account_type'];
       $_SESSION['email'] = $email;
 
@@ -42,7 +54,10 @@
 
   function logout(){
     session_start_once();
+    session_unset();
     session_destroy();
+    //pages pas de point
+    header('Location: login.php');
   }
 
   function getBadges(){
@@ -66,22 +81,8 @@
   function createBadge(){
     session_start_once();
     $cursor = createCursor();
-
-    // $name_badge = array('php dev 2', 'php dev3');
-    // $description_badge = array('woot woot', 'woot woot woot');
-    // $shape_badge = array('Circle', 'square');
-    // $color_badge = array('00ff00', '0000ff');
-
-
-    // $create_badges = $cursor->prepare('INSERT INTO badge (name_badge, description_badge, shape_badge, color_badge) VALUES (:name_badge, :description_badge, :shape_badge, :color_badge)');
-    // $create_badges->execute(array(
-    //   'name_badge'=>$name_badge, 
-    //   'description_badge'=>$description_badge,
-    //   'shape_badge' => $shape_badge,
-    //   'color_badge' =>$color_badge
-    // ));
-      
-   
+// name_badge description_badge shape_badge color_badge 
+    $query_create_badge = $cursor->prepare
 
    
   }
