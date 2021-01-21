@@ -30,7 +30,7 @@ include('../components/functions.php');
                 <?= $resultat['description_badge'] ?> 
                 <?= $resultat['shape_badge'] ?> 
                 <?= $resultat['color_badge'] ?> 
-                <a href="update.php?badgeId=<?= $resultat['id_badge']?>">Update Badge</a>
+                <a href="updateform.php?badgeId=<?= $resultat['id_badge']?>">Update Badge</a>
                 <a href="delete.php?badgeId=<?= $resultat['id_badge']?>">Delete Badge</a>
 
             </li>
