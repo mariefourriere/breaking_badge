@@ -1,6 +1,6 @@
 # breaking_badge
 
-# Table of Content
+## Table of Content
 * [Team](#Team)
 * [Introduction](#Introduction)
 * [Technologies](#Technologies)
@@ -11,7 +11,7 @@
 
 # Team
 
-Our team members are:
+The team members are:
 
 - [Axel Nalesso](https://github.com/NalessoAxel)
 - [Agnes Kabongo](https://github.com/agkabongo)
@@ -40,11 +40,10 @@ Find our second attempt to a fullstack website [here](https:///)
 * HTML
 * JS
 * CSS
-* Bulma
+* Bootstrap
 * PHP
 * SQL
 * phpmyadmin
-* Figma
 * Git hub
 * Git hub projects
 
@@ -52,7 +51,7 @@ Find our second attempt to a fullstack website [here](https:///)
 # Setup
 
 ### Github
-We worked with github to share our code. Find the repo [here](https://github.com/GuyRichardib/mybocuse).
+We worked with github to share our code. Find the repo [here](https://github.com/NalessoAxel/breaking_badge).
 ```git
 git init
 git clone (url)
@@ -61,20 +60,18 @@ git clone (url)
 We used [Github projects](https://github.com/NalessoAxel/breaking_badge/projects/1) to keep track of our work process and made mornings and afternoons briefs to stay aligned with the final objectives.
 
 ### Design
-Our website design was made using Figma, click [here](https://) to view the prototype.
+Our website design was made using Figma, click ![image](/assets/img/prototype.jpeg) to view the prototype.
 
 Here is an image of the database architecture.
-![image](./asset/images/)
+![image](/assets/img/architecturebdd.jpeg)
 
 
 # Improvements
 We wish to improve:
 
-* responsiveness
-* home links have problems
-* use of /includes are absent
 * accessibility
 * some features are missing in pages 
+* functions are not all fully working
  
 # Contributing
 Pull requests are mandatory. Our team was asked to make commits and pull request often to keep track of everybody's work.
