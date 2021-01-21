@@ -1,7 +1,9 @@
 <?php 
-session_start();
+ini_set('display_errors','on');
+error_reporting(E_ALL);
+include('../components/functions.php');
+profile();
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,16 +40,16 @@ session_start();
                             <div class="d-none d-sm-block topbar-divider"></div>
                             <li class="nav-item dropdown no-arrow">
                                 <div class="nav-item dropdown no-arrow"><a class=" nav-link" aria-expanded="false" href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small">NOM PRENOM</span><img class="border rounded-circle img-profile" src="../assets/img/avatar1.jpeg"></a>
-                                    <div class="dropdown-menu shadow dropdown-menu-right animated--grow-in"><a class="dropdown-item" href="#"><i class="fa fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a><a class="dropdown-item" href="#"><i class="fa fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Settings</a><a class="dropdown-item" href="#"><i class="fa fa-list fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Activity log</a>
-                                        <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i class="fa fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Logout</a>
-                                    </div>
                                 </div>
                             </li>
                         </ul>
                     </div>
                 </nav>
                 <div class="container-fluid">
-                    <h3 class="text-dark mb-4">Profile <?php echo ' '.$_SESSION['account_type'];?></h3>
+                    <h3 class="text-dark mb-4">Profile 
+                    <?php       
+        foreach(profile() as $profile){ ?>
+                    <?php echo ' '.$profile['account_type'];}?></h3>
                     <div class="row mb-3">
                         <div class="col-lg-4">
                             <div class="card mb-3">
@@ -87,22 +89,30 @@ session_start();
                                                 <div class="form-row">
                                                     <div class="col">
                                                         <div class="form-group"><label for="username"><strong>Username</strong></label>
-                                                        <div><?php echo $_SESSION['account_type']; ?></div>
+                                                        <div><?php       
+        foreach(profile() as $profile){ ?>
+                    <?php echo ' '.$profile['account_type'];}?></div>
                                                         </div>
                                                     </div>
                                                     <div class="col">
                                                         <div class="form-group"><label for="email"><strong>Email Address</strong></label>
-                                                    <div><?php echo $_SESSION['email']; ?></div>
+                                                    <div><?php       
+        foreach(profile() as $profile){ ?>
+                    <?php echo ' '.$profile['email'];}?></div>
                                                     </div>
                                                     </div>
                                                 </div>
                                                 <div class="form-row">
                                                     <div class="col">
-                                                        <div class="form-group"><label for="first_name"><strong>First Name</strong></label><div><?php echo $_SESSION['firstname']; ?></div></div>
+                                                        <div class="form-group"><label for="first_name"><strong>First Name</strong></label><div><?php       
+        foreach(profile() as $profile){ ?>
+                    <?php echo ' '.$profile['firstname'];}?></div></div>
                                                     </div>
                                                     <div class="col">
                                                         <div class="form-group"><label for="last_name"><strong>Last Name</strong></label>
-                                                    <div><?php echo $_SESSION['lastname']; ?> </div>
+                                                    <div><?php       
+        foreach(profile() as $profile){ ?>
+                    <?php echo ' '.$profile['lastname'];}?> </div>
                                                     </div>
                                                     </div>
                                                 </div>

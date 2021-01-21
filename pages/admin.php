@@ -55,11 +55,10 @@
                             </div>
                         </div>
                     </form>
-                </div>
             </div>
         </div>
-    </div>
-
+     </div>
+</div>
 
 
 
@@ -67,8 +66,10 @@
 <div class="row"> 
 <div class="col-4"><h3 class="text-dark mb-4">Badges</h3></div>
 <div class="col-8 d-flex justify-content-end">
-<button type="button" class="btn btn-danger mb-3" data-toggle="modal" data-target="#myModal">
+<button type="button" class="btn btn-danger m-3"><i class="fa fa-plus"></i> Create a badge</button>
+<button type="button" class="btn btn-danger m-3" data-toggle="modal" data-target="#myModal">
         <i class="fa fa-plus"></i> Grant a badge </button>
+        
 </div>
 
 
@@ -102,12 +103,9 @@
 
                         <?php 
         
-        $cursor = createCursor();
-        $all_badges = $cursor->prepare('SELECT * FROM badge');
-        $executeIsOK = $all_badges->execute();
-        $result = $all_badges->fetch();
         
-        while($resultat = $all_badges->fetch()){ ?>
+        
+        foreach(getBadges() as $resultat){ ?>
                         <tr>
                             <td><?= $resultat['name_badge']?></td>
                             <td><?= $resultat['description_badge']?><br></td>

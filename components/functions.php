@@ -31,6 +31,16 @@
       
   }
 
+  function profile() {
+    session_start_once();
+    $cursor = createCursor();
+    $email= $_SESSION['email'];
+    $query_profile = $cursor->query("SELECT * FROM users WHERE email LIKE '$email'");
+    $results_profile = $query_profile->fetchAll(PDO::FETCH_ASSOC);
+
+   return $results_profile;
+  }
+
 
   function login($email, $password){
     session_start_once();
@@ -74,7 +84,7 @@
   function getUsers(){
     session_start_once();
     $cursor = createCursor();
-    $query_users = $cursor->query('SELECT lastname, firstname, account_type FROM users');
+    $query_users = $cursor->query("SELECT lastname, firstname, account_type FROM users WHERE account_type LIKE 'NORMIE'");
     $results_users = $query_users->fetchall(PDO::FETCH_ASSOC);
   
    // $id_users = $cursor->prepare('SELECT id_badge from badge');
