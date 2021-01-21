@@ -60,7 +60,7 @@ git clone (url)
 We used [Github projects](https://github.com/NalessoAxel/breaking_badge/projects/1) to keep track of our work process and made mornings and afternoons briefs to stay aligned with the final objectives.
 
 ### Design
-Our website design was made using Figma, click ![image](/assets/img/prototype.jpeg) to view the prototype.
+Here is a prototype of the website to get the frontend started ![image](/assets/img/prototype.jpeg).
 
 Here is an image of the database architecture.
 ![image](/assets/img/architecturebdd.jpeg)
