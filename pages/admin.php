@@ -3,8 +3,6 @@
  getBadges();
  
  ?>
-
-
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
         aria-hidden="true">
@@ -20,8 +18,8 @@
                     <form method="POST">
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="mealcategory">Badge</label>
-                                <select id="mealcategory" class="form-control" name="category">
+                                <label for="grantBadgeName">Badge</label>
+                                <select id="grandtBadgeName" class="form-control" name="grantBadgeName">
                                     <option selected>Choose...</option>
                                     <?php 
                                     foreach(getBadges() as $results_badges){ 
@@ -36,8 +34,8 @@
                         </div>
                         <div class="form-row">
                             <div class="form-group col-6 col-md-6">
-                            <label for="mealcategory">User</label>
-                                <select id="mealcategory" class="form-control" name="category">
+                            <label for="grantedUser">User</label>
+                                <select id="grantedUser" class="form-control" name="grantedUser">
                                     <option selected>Choose...</option>
 
                                     <?php 
