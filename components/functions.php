@@ -97,11 +97,12 @@
   function createBadge(){
     session_start_once();
     $cursor = createCursor();
+    
     $requete = $cursor->prepare("INSERT INTO badge(name_badge, description_badge, shape_badge, color_badge) VALUES(:name, :desc, :shape, :color)");
-    $requete->bindValue(':name', $_POST['name'], PDO::PARAN_INT);
-    $requete->bindValue(':desc', $_POST['desc'], PDO::PARAN_INT);
-    $requete->bindValue(':shape', $_POST['shape'], PDO::PARAN_INT);
-    $requete->bindValue(':color', $_POST['color'], PDO::PARAN_INT);
+    $requete->bindValue(':name', $_POST['name']);
+    $requete->bindValue(':desc', $_POST['desc']);
+    $requete->bindValue(':shape', $_POST['shape']);
+    $requete->bindValue(':color', $_POST['color']);
 
     $createBadgeOk = $requete->execute();
 
@@ -117,19 +118,59 @@
 
     
   }
+  function _getAllBadges() {
+    session_start_once();
+    $cursor = createCursor();
+    $all_badges = $cursor->prepare('SELECT * FROM badge');
+    $executeIsOK = $all_badges->execute();
+   
+    return $all_badges->fetchAll(PDO::FETCH_ASSOC);
+    
+    
+}
   
 
   function editBadge($badge_id){
+      session_start_once();
+      $cursor = createCursor();
+      $all_badges = $cursor->prepare('SELECT * FROM badge WHERE id_badge=:badgeId');
+      
+      $all_badges->bindValue(':badgeId', $badge_id);
+      
+      $executeIsOk = $all_badges->execute();
+      
+      return $all_badges->fetch();
 
+      
+    
+  }
+  function updateBadge(){
+    session_start_once();
+    $cursor = createCursor();
+
+        $updateBadge = $cursor->prepare('UPDATE badge SET name_badge=:name , description_badge=:description, shape_badge=:shape, color_badge=:color  WHERE id_badge=:badgeId LIMIT 1');
+        
+        $updateBadge->bindValue(':badgeId', $_POST['badgeId']);
+        $updateBadge->bindValue(':name', $_POST['name']);
+        $updateBadge->bindValue(':description', $_POST['desc']);
+        $updateBadge->bindValue(':shape', $_POST['shape']);
+        $updateBadge->bindValue(':color', $_POST['color']);
+        
+        $updateOk = $updateBadge->execute();
+        
+        if($updateOk) {
+          echo'Badge modified';
+        } else {
+          echo'Badge is not modified';
+        }
   }
 
   function removeBadge($badge_id){
     
-
-
   }
 
   function grantBadgeToUser($badge_id, $user_id){
+
 
   }
 
