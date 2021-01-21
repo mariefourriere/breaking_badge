@@ -66,9 +66,8 @@
     $all_badges = $cursor ->prepare('SELECT * from badge');
     $all_badges->execute();
     $resultats = $all_badges->fetchall();
-    echo'<pre>';
-    print_r($resultats);
-    echo'<pre>';
+
+    return $resultats;
      
   }
 
@@ -76,19 +75,13 @@
     session_start_once();
     $cursor = createCursor();
     $query_users = $cursor->query('SELECT lastname, firstname, account_type FROM users');
-     $results_users = $query_users->fetchall();
-     echo'<pre>';
-     print_r($results_users);
-     echo'<pre>';
-    $id_users = $cursor->prepare('SELECT id_badge from badge');
-    $id_users ->execute();
-    $resultats = $id_users->fetchall();//selecrtionne tout les ids des badge
-    echo'<pre>';
-    print_r($resultats);
-    echo'<pre>';
+    $results_users = $query_users->fetchall(PDO::FETCH_ASSOC);
+  
+   // $id_users = $cursor->prepare('SELECT id_badge from badge');
+    //$id_users ->execute();
+   // $resultats = $id_users->fetchall();//selecrtionne tout les ids des badges
 
-
-   
+    return $results_users;
   }
 
   function createBadge(){

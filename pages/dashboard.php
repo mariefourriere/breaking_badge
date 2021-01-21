@@ -3,10 +3,6 @@ ini_set('display_errors','on');
 error_reporting(E_ALL);
 
 include('../components/functions.php');
-getBadges();
-getUsers();
-
-
 ?>
 
 <!DOCTYPE html>
@@ -66,6 +62,8 @@ getUsers();
             </footer>
         </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fa fa-angle-up"></i></a>
     </div>  
+    <script src="../assets/bootstrap/js/jquery.min.js"></script>
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    
 </body>
 </html>
