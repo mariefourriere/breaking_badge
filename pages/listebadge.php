@@ -18,13 +18,8 @@ include('../components/functions.php');
 
     <ul>
         <?php 
-        session_start_once();
-        $cursor = createCursor();
-        $all_badges = $cursor->prepare('SELECT * FROM badge');
-        $executeIsOK = $all_badges->execute();
-        $result = $all_badges->fetch();
         
-        while($resultat = $all_badges->fetch()){ ?>
+       foreach(_getAllBadges() as $resultat){ ?>
             <li>
                 <?= $resultat['name_badge'] ?> 
                 <?= $resultat['description_badge'] ?> 
