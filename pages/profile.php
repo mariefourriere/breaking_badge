@@ -3,7 +3,13 @@ ini_set('display_errors','on');
 error_reporting(E_ALL);
 include('../components/functions.php');
 profile();
+
+if($_SESSION['account_type'] == 'ADMIN'){
+    header("location: /profileadmin.php");
+}
 ?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,7 +45,9 @@ profile();
                         <ul class="nav navbar-nav flex-nowrap ml-auto">
                             <div class="d-none d-sm-block topbar-divider"></div>
                             <li class="nav-item dropdown no-arrow">
-                                <div class="nav-item dropdown no-arrow"><a class=" nav-link" aria-expanded="false" href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small">NOM PRENOM</span><img class="border rounded-circle img-profile" src="../assets/img/avatar1.jpeg"></a>
+                                <div class="nav-item dropdown no-arrow"><a class=" nav-link" aria-expanded="false" href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small"><?php       
+        foreach(profile() as $profile){ ?>
+                                                        <?php echo $profile['firstname'].' '.$profile['lastname'];}?></span><img class="border rounded-circle img-profile" src="../assets/img/avatar1.jpeg"></a>
                                 </div>
                             </li>
                         </ul>

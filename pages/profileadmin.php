@@ -49,8 +49,9 @@ profile();
                                 <div class="d-none d-sm-block topbar-divider"></div>
                                 <li class="nav-item dropdown no-arrow">
                                     <div class="nav-item dropdown no-arrow"><a class=" nav-link" aria-expanded="false"
-                                            href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small">NOM
-                                                PRENOM</span><img class="border rounded-circle img-profile"
+                                            href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small"><?php       
+        foreach(profile() as $profile){ ?>
+                                                        <?php echo $profile['firstname'].' '.$profile['lastname'];}?></span><img class="border rounded-circle img-profile"
                                                 src="../assets/img/avatar1.jpeg"></a>
 
                                     </div>
@@ -121,7 +122,7 @@ profile();
                 <div class="text-center my-auto copyright"><span>Copyright © Carbone 2021</span></div>
             </div>
         </footer>
-        </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+        </div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fa fa-angle-up"></i></a>
         </div>
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
