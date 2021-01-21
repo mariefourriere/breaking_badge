@@ -63,35 +63,66 @@
   function getBadges(){
     session_start_once();
     $cursor = createCursor();
-    $query_badge_normie = $cursor->query('SELECT name_badge, description_badge FROM badge JOIN users_has_badge ON badge.id_badge = users_has_badge.badge_id');
-    
-    $results_badge_normie = $query_badge_normie->fetch();
-    echo $results_badge_normie['name_badge'] . $results_badge_normie['description_badge'];
+    $all_badges = $cursor ->prepare('SELECT * from badge');
+    $all_badges->execute();
+    $resultats = $all_badges->fetchall();
+    echo'<pre>';
+    print_r($resultats);
+    echo'<pre>';
+     
   }
 
   function getUsers(){
     session_start_once();
     $cursor = createCursor();
-    $query_users = $cursor->query('SELECT lastname, firstname FROM users JOIN users_has_badge ON users.id = users_has_badge.users_id');
-    
-    $results_users = $query_users->fetch();
-    echo $results_users['firstname'];
+    $query_users = $cursor->query('SELECT lastname, firstname, account_type FROM users');
+     $results_users = $query_users->fetchall();
+     echo'<pre>';
+     print_r($results_users);
+     echo'<pre>';
+    $id_users = $cursor->prepare('SELECT id_badge from badge');
+    $id_users ->execute();
+    $resultats = $id_users->fetchall();//selecrtionne tout les ids des badge
+    echo'<pre>';
+    print_r($resultats);
+    echo'<pre>';
+
+
+   
   }
 
   function createBadge(){
     session_start_once();
     $cursor = createCursor();
-// name_badge description_badge shape_badge color_badge 
-    $query_create_badge = $cursor->prepare
+    $requete = $cursor->prepare("INSERT INTO badge(name_badge, description_badge, shape_badge, color_badge) VALUES(:name, :desc, :shape, :color)");
+    $requete->bindValue(':name', $_POST['name'], PDO::PARAN_INT);
+    $requete->bindValue(':desc', $_POST['desc'], PDO::PARAN_INT);
+    $requete->bindValue(':shape', $_POST['shape'], PDO::PARAN_INT);
+    $requete->bindValue(':color', $_POST['color'], PDO::PARAN_INT);
 
-   
+    $createBadgeOk = $requete->execute();
+
+    if($createBadgeOk) {
+      $message = 'L\'ajout du badge a bien été effectué';
+    } else {
+      $message = 'Echec';
+    }
+
+    echo'<pre>';
+    print_r($createBadgeOk);
+    echo'<pre>';
+
+    
   }
+  
 
   function editBadge($badge_id){
 
   }
 
   function removeBadge($badge_id){
+    
+
 
   }
 

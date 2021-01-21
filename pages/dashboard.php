@@ -1,3 +1,14 @@
+<?php 
+ini_set('display_errors','on');
+error_reporting(E_ALL);
+
+include('../components/functions.php');
+getBadges();
+getUsers();
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,7 +54,7 @@
                 </nav>
                 
                 <?php 
-                      include('../components/functions.php');
+                      
                       isNormie();
                 ?>
            
