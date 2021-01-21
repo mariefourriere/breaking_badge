@@ -5,7 +5,7 @@ include('../components/functions.php');
 profile();
 
 if($_SESSION['account_type'] == 'ADMIN'){
-    header("location: public/breaking_badge/pages/profileadmin.php");
+    header("location: profileadmin.php");
 }
 ?>
 
