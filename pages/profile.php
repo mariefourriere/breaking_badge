@@ -5,7 +5,7 @@ include('../components/functions.php');
 profile();
 
 if($_SESSION['account_type'] == 'ADMIN'){
-    header("location: /profileadmin.php");
+    header("location: profileadmin.php");
 }
 ?>
 
@@ -61,7 +61,7 @@ if($_SESSION['account_type'] == 'ADMIN'){
                     <div class="row mb-3">
                         <div class="col-lg-4">
                             <div class="card mb-3">
-                                <div class="card-body text-center shadow"><img class="rounded-circle mb-3 mt-4" src="assets/img/dogs/image2.jpeg" width="160" height="160">
+                                <div class="card-body text-center shadow"><img class="rounded-circle mb-3 mt-4" src="../assets/img/image2.jpg" width="160" height="160">
                                 </div>
                             </div>
                             <div class="card shadow mb-4">
@@ -69,15 +69,15 @@ if($_SESSION['account_type'] == 'ADMIN'){
                                     <h6 class="text-danger font-weight-bold m-0">Recent Badges</h6>
                                 </div>
                                 <div class="card-body">
-                                    <h4 class="small font-weight-bold">Badge1<span class="float-right">100%</span></h4>
+                                    <h4 class="small font-weight-bold">Badge1<span class="float-right"><i class="fa fa-trophy"></i></span></h4>
                                     <div class="progress progress-sm mb-3">
                                         <div class="progress-bar bg-danger" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
                                     </div>
-                                    <h4 class="small font-weight-bold">Badge2<span class="float-right">100%</span></h4>
+                                    <h4 class="small font-weight-bold">Badge2<span class="float-right"><i class="fa fa-trophy"></i></span></h4>
                                     <div class="progress progress-sm mb-3">
                                         <div class="progress-bar bg-warning" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
                                     </div>
-                                    <h4 class="small font-weight-bold">Badge3<span class="float-right">100%</span></h4>
+                                    <h4 class="small font-weight-bold">Badge3<span class="float-right"><i class="fa fa-trophy"></i></span></h4>
                                     <div class="progress progress-sm mb-3">
                                         <div class="progress-bar bg-danger" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
                                     </div>                                    

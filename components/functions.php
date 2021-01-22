@@ -84,7 +84,7 @@
   function getUsers(){
     session_start_once();
     $cursor = createCursor();
-    $query_users = $cursor->query("SELECT lastname, firstname, account_type FROM users WHERE account_type LIKE 'NORMIE'");
+    $query_users = $cursor->query("SELECT id, lastname, firstname, account_type FROM users WHERE account_type LIKE 'NORMIE'");
     $results_users = $query_users->fetchall(PDO::FETCH_ASSOC);
   
    // $id_users = $cursor->prepare('SELECT id_badge from badge');
@@ -176,5 +176,17 @@
 
   function removeBadgeFromUser($badge_id, $user_id){
 
+  }
+
+  function acquiredBadges(){
+    session_start_once();
+    $cursor = createCursor();
+    $query_acquiredbadges = $cursor->query("SELECT `users_has_badge`.`users_id`, `users_has_badge`.`badge_id`, `badge`.`name_badge`,`badge`.`description_badge`, `users`.`firstname`, `users`.`lastname`
+    FROM `users_has_badge` 
+      LEFT JOIN `badge` ON `users_has_badge`.`badge_id` = `badge`.`id_badge` 
+      LEFT JOIN `users` ON `users_has_badge`.`users_id` = `users`.`id`;");
+    $results_acquiredBadges = $query_acquiredbadges->fetchall(PDO::FETCH_ASSOC);
+
+    return $results_acquiredBadges;
   }
 ?>
