@@ -1,3 +1,16 @@
+<?php 
+if(isset($_POST['badgeName'])){
+    createBadge();
+}
+if(isset($_POST['grantBadgeName'])) {
+    grantBadgeToUser();
+}
+
+?>
+
+
+
+
 <!-- BADGES Modals -->
 
 <!-- MODAL GRANT BADGE TO USER -->
@@ -18,9 +31,9 @@
                             <select id="grandtBadgeName" class="form-control" name="grantBadgeName" required>
                                 <option value="">Choose...</option>
                                 <?php 
-                                    foreach(getBadges() as $results_badges){ 
+                                    foreach(_getAllBadges() as $results_badges){ 
                                     ?>
-                                <option><?= $results_badges['name_badge']?></option>
+                                <option value="<?= $results_badges['id_badge']?>"><?= $results_badges['name_badge']?></option>
                                 <?php 
                                     }
                                     ?>
@@ -37,7 +50,8 @@
                                 <?php 
                                     foreach(getUsers() as $results_users){ 
                                     ?>
-                                <option><?= $results_users['firstname'].' '.$results_users['lastname']?></option>
+                                <option value="<?= $results_users['id']?>"><?= $results_users['firstname'].' '.$results_users['lastname']?></option>
+                                
                                 <?php 
                                     }
                                     ?>
@@ -72,6 +86,7 @@
             </div>
             <div class="modal-body">
                 <form action="" method="POST" id="createBadgeForm">
+                
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="badgeName">Badge Name</label>
@@ -91,7 +106,7 @@
 
                         <div class="form-group col-12">
                             <label for="badgeDesc">Description</label>
-                            <textarea class="form-control" form="createBadgeForm" required></textarea>
+                            <textarea class="form-control" name="badgeDesc" form="createBadgeForm" required></textarea>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -162,7 +177,7 @@
                         <tr>
                             <td><?= $resultat['name_badge']?></td>
                             <td><?= $resultat['description_badge']?><br></td>
-                            <td><a href="update.php?badgeId=<?= $resultat['id_badge']?>" title="Edit"><i
+                            <td><a href="updateform.php?badgeId=<?= $resultat['id_badge']?>" title="Edit"><i
                                         class="fa fa-edit"></i></a>
                                 <a href="delete.php?badgeId=<?= $resultat['id_badge']?>" title="Delete"><i
                                         class="fa fa-trash"></i></a></td>

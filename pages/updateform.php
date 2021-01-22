@@ -15,7 +15,7 @@ $badges = editBadge($_GET['badgeId']);
     </head>
     <body>
     <form action="update.php" method="POST">
-        <input type="hidden" name="badgeId" value="<?=$badges ['id_badge']; ?>">
+        <input type="hidden" name="badgeId" value="<?=$badges['id_badge']; ?>">
         <p>Nom du badge : <input type="text" name="name" value="<?=$badges['name_badge']; ?>" /></p>
         <p>Description du badge: <input type="text" name="desc" value="<?=$badges['description_badge']; ?>" /></p>
         <p>Forme du badge: <input type="text" name="shape" value="<?=$badges['shape_badge']; ?>" /></p>
