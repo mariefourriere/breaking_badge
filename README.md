@@ -76,6 +76,7 @@ We wish to improve:
 * Bonus task is missing 
 * Add a profile picture when creating a new user
 * The stat feature is also missing
+* Have a better responsiveness
  
 # Contributing
 Pull requests are mandatory. Our team was asked to make commits and pull request often to keep track of everybody's work.
