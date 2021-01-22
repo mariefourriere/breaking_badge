@@ -37,7 +37,7 @@ if(!empty($_POST['email'])){
                         <div class="col-md-8 col-10 my-5">
                             <h3 class="mb-5 text-center heading">Welcome</h3>
                             <h6 class="msg-info">Please login to your account</h6>
-<form method="post">
+                            <form method="post">
                             <div class="form-group"> 
                                 <label class="form-control-label text-muted">Email</label> 
                                 <input type="text" id="email" name="email" placeholder="Email" class="form-control"> 

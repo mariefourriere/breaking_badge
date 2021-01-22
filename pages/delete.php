@@ -11,7 +11,7 @@ session_start_once();
     $deleteBadge->bindValue(':badgeId', $_GET['badgeId']);
     
     $deleteok = $deleteBadge->execute();
-    echo $deleteok;
+   
    
 
     if($deleteok) {
@@ -19,5 +19,7 @@ session_start_once();
     } else {
       echo'Badge is not delete';
     }
+
+    header ('Location: dashboard.php')
 
     ?>
