@@ -73,7 +73,7 @@
   function getBadges(){
     session_start_once();
     $cursor = createCursor();
-    $all_badges = $cursor ->prepare('SELECT * from badge');
+    $all_badges = $cursor ->prepare('SELECT id_badge, name_badge, description_badge from badge');
     $all_badges->execute();
     $resultats = $all_badges->fetchall();
 
@@ -86,10 +86,7 @@
     $cursor = createCursor();
     $query_users = $cursor->query("SELECT id, lastname, firstname, account_type FROM users WHERE account_type LIKE 'NORMIE'");
     $results_users = $query_users->fetchall(PDO::FETCH_ASSOC);
-  
-   // $id_users = $cursor->prepare('SELECT id_badge from badge');
-    //$id_users ->execute();
-   // $resultats = $id_users->fetchall();//selecrtionne tout les ids des badges
+
 
     return $results_users;
   }
@@ -99,25 +96,20 @@
     $cursor = createCursor();
     
     $requete = $cursor->prepare("INSERT INTO badge(name_badge, description_badge, shape_badge, color_badge) VALUES(:name, :desc, :shape, :color)");
-    $requete->bindValue(':name', $_POST['name']);
-    $requete->bindValue(':desc', $_POST['desc']);
-    $requete->bindValue(':shape', $_POST['shape']);
-    $requete->bindValue(':color', $_POST['color']);
+    $requete->bindValue(':name', $_POST['badgeName']);
+    $requete->bindValue(':desc', $_POST['badgeDesc']);
+    $requete->bindValue(':shape', $_POST['badgeShape']);
+    $requete->bindValue(':color', $_POST['badgeColor']);
 
     $createBadgeOk = $requete->execute();
-
-    if($createBadgeOk) {
-      $message = 'L\'ajout du badge a bien été effectué';
-    } else {
-      $message = 'Echec';
-    }
-
-    echo'<pre>';
-    print_r($createBadgeOk);
-    echo'<pre>';
-
+ 
+  }
+  function createUser() {
+    session_start_once();
+    $cursor = createCursor();
     
   }
+  
   function _getAllBadges() {
     session_start_once();
     $cursor = createCursor();
@@ -161,18 +153,26 @@
 
   }
 
-  function removeBadge($badge_id){
+  // function removeBadge($badge_id){
+      
+  // }
+
+  function grantBadgeToUser(){
+    session_start_once();
+    $cursor = createCursor();
+    $grantBadgeToUser = $cursor->prepare("INSERT INTO users_has_badge(users_has_badge.users_id, users_has_badge.badge_id)VALUES (:users_id, :badge_id)");
     
-  }
-
-  function grantBadgeToUser($badge_id, $user_id){
-
-
-  }
-
-  function removeBadgeFromUser($badge_id, $user_id){
+    $grantBadgeToUser->bindValue(':users_id', $_POST['grantedUser']);
+    $grantBadgeToUser->bindValue(':badge_id', $_POST['grantBadgeName']);
+    
+  
+    $createBadgeOk = $grantBadgeToUser->execute();
 
   }
+
+  // function removeBadgeFromUser($badge_id, $user_id){
+    
+  // }
 
   function acquiredBadges(){
     session_start_once();
