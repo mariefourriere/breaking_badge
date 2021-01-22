@@ -158,11 +158,7 @@
         
         $updateOk = $updateBadge->execute();
         
-        if($updateOk) {
-          echo'Badge modified';
-        } else {
-          echo'Badge is not modified';
-        }
+
   }
 
   // function removeBadge($badge_id){
@@ -196,5 +192,24 @@
     $results_acquiredBadges = $query_acquiredbadges->fetchall(PDO::FETCH_ASSOC);
 
     return $results_acquiredBadges;
+  }
+
+  function deleteAcquiredBadge(){
+
+    session_start_once();
+    $cursor = createCursor();
+    //on prepare la requette
+    $deleteBadge = $cursor->prepare('DELETE FROM users_has_badge WHERE badge_id=:badgeId LIMIT 1');
+
+    $deleteBadge->bindValue(':badgeId', $_GET['badgeId']);
+    
+    $deleteok = $deleteBadge->execute();
+   
+
+    echo "<script>
+alert('Badge removed from user');
+window.location.href='dashboard.php';
+</script>";
+
   }
 ?>

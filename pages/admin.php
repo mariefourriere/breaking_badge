@@ -306,6 +306,7 @@ if(isset($_POST['firstname'])) {
                             <th>Firstname</th>
                             <th>Lastname</th>
                             <th>Acquired Badges</th>
+                            <td><strong>Action</strong></td>
                         </tr>
                     </thead>
                     <tbody>
@@ -315,6 +316,9 @@ if(isset($_POST['firstname'])) {
                             <td><?= $acquired_badges['firstname']?></td>
                             <td><?= $acquired_badges['lastname']?><br></td>
                             <td><?= $acquired_badges['name_badge']?></td>
+                            <td><a href="deleteacquiredbadge.php?badgeId=<?= $acquired_badges['badge_id']?>" title="Delete"><i
+                                        class="fa fa-trash"></i></a>
+                            <td> 
                         </tr>
 
                         <?php } ?>
@@ -325,6 +329,7 @@ if(isset($_POST['firstname'])) {
                             <th>Firstname</th>
                             <th>Lastname</th>
                             <th>Acquired Badges</th>
+                            <td><strong>Action</strong></td>
                         </tr>
                     </tfoot>
                 </table>
@@ -352,3 +357,5 @@ if(isset($_POST['firstname'])) {
         </div>
     </div>
 </div>
+
+
