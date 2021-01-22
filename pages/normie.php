@@ -25,51 +25,23 @@
                         <thead>
                             <tr>
                                 <th>Name</th>
-                                <th>Criteria</th>
-                                <th>Date</th>
+                                <th>Description</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>PHP Development - 1</td>
-                                <td>Has followed a training about: - Configuring PHP environments - Managing sessions - Sending dynamic content<br></td>
-                                <td>2008/11/28</td>
-                            </tr>
-                            <tr>
-                                <td>Javascript - level 1<br></td>
-                                <td>Has followed a training on how to: - Code in JS - Adapt an existing code - Use DOM<br></td>
-                                <td>2009/10/09<br></td>
-                            </tr>
-                            <tr>
-                                <td>Javascript - level 2<br></td>
-                                <td>Has followed a training on how to: - Code in JS - Adapt an existing code - Use DOM<br></td>
-                                <td>2009/01/12<br></td>
-                            </tr>
-                            <tr>
-                                <td>Javascript - level 1<br></td>
-                                <td>Has followed a training on how to: - Code in JS - Adapt an existing code - Use DOM<br></td>
-                                <td>2012/10/13<br></td>
-                            </tr>
-                            <tr>
-                                <td>PHP Development - 1<br></td>
-                                <td>Has followed a training about: - Configuring PHP environments - Managing sessions - Sending dynamic content<br></td>
-                                <td>2011/06/07<br></td>
-                            </tr>
-                            <tr>
-                                <td>PHP Development - 1<br></td>
-                                <td>Has followed a training about: - Configuring PHP environments - Managing sessions - Sending dynamic content<br></td>
-                                <td>2012/12/02<br></td>
-                            </tr>
-                            <tr></tr>
-                            <tr></tr>
-                            <tr></tr>
-                            <tr></tr>
+                            
+                        <?php foreach(acquiredBadges() as $acquired_badges){ ?>
+                        <tr>
+                            <td><?= $acquired_badges['name_badge']?></td>
+                            <td><?= $acquired_badges['description_badge']?><br></td>
+                        </tr>
+
+                        <?php } ?>
                         </tbody>
                         <tfoot>
                             <tr>
                                 <td><strong>Name</strong></td>
                                 <td><strong>Description</strong></td>
-                                <td><strong>Date</strong></td>
                             </tr>
                         </tfoot>
                     </table>
