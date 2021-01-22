@@ -185,4 +185,23 @@
 
     return $results_acquiredBadges;
   }
+
+  function deleteAcquiredBadge(){
+
+    session_start_once();
+    $cursor = createCursor();
+    //on prepare la requette
+    $deleteBadge = $cursor->prepare('DELETE FROM users_has_badge WHERE badge_id=:badgeId LIMIT 1');
+
+    $deleteBadge->bindValue(':badgeId', $_GET['badgeId']);
+    
+    $deleteok = $deleteBadge->execute();
+   
+
+    echo "<script>
+alert('Badge removed from user');
+window.location.href='dashboard.php';
+</script>";
+
+  }
 ?>
