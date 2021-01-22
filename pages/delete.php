@@ -11,13 +11,12 @@ session_start_once();
     $deleteBadge->bindValue(':badgeId', $_GET['badgeId']);
     
     $deleteok = $deleteBadge->execute();
-    echo $deleteok;
    
 
-    if($deleteok) {
-      echo'Badge delete';
-    } else {
-      echo'Badge is not delete';
-    }
+    echo "<script>
+alert('Badge deleted successfully');
+window.location.href='dashboard.php';
+</script>";
 
+    ?>
     ?>

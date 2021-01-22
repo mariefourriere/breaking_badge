@@ -4,6 +4,11 @@ error_reporting(E_ALL);
 include('../components/functions.php');
 updateBadge();
 
+echo "<script>
+alert('Badge Updated successfully');
+window.location.href='dashboard.php';
+</script>";
+
     ?>
     
     <!DOCTYPE html>

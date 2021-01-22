@@ -158,11 +158,7 @@
         
         $updateOk = $updateBadge->execute();
         
-        if($updateOk) {
-          echo'Badge modified';
-        } else {
-          echo'Badge is not modified';
-        }
+
   }
 
   function removeBadge($badge_id){

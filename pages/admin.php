@@ -162,7 +162,7 @@
                         <tr>
                             <td><?= $resultat['name_badge']?></td>
                             <td><?= $resultat['description_badge']?><br></td>
-                            <td><a href="update.php?badgeId=<?= $resultat['id_badge']?>" title="Edit"><i
+                            <td><a href="updateform.php?badgeId=<?= $resultat['id_badge']?>" title="Edit"><i
                                         class="fa fa-edit"></i></a>
                                 <a href="delete.php?badgeId=<?= $resultat['id_badge']?>" title="Delete"><i
                                         class="fa fa-trash"></i></a></td>
