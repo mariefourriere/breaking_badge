@@ -107,7 +107,15 @@
   function createUser() {
     session_start_once();
     $cursor = createCursor();
-    
+    $requete = $cursor->prepare("INSERT INTO users(email, password, firstname, lastname) VALUES(:mail, :pwd, :firstname, :lastname)");
+    $requete->bindValue(':mail', $_POST['email']);
+    $requete->bindValue(':pwd', password_hash($_POST['password'], PASSWORD_BCRYPT));
+    $requete->bindValue(':firstname', $_POST['firstname']);
+    $requete->bindValue(':lastname', $_POST['lastname']);
+   
+
+    $createUserOk = $requete->execute();
+
   }
   
   function _getAllBadges() {

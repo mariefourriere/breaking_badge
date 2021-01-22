@@ -11,7 +11,6 @@ session_start_once();
     $deleteBadge->bindValue(':badgeId', $_GET['badgeId']);
     
     $deleteok = $deleteBadge->execute();
-   
 
     echo "<script>
 alert('Badge deleted successfully');

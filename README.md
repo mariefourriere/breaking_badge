@@ -29,7 +29,7 @@ ADMINs who can create/edit/delete badges and grant them.
 You must keep most of the logic outside of pages, into functions, for readability
 >BONUS: Organize badges by topics so you can display a progression
 
-Find our second attempt to a fullstack website [here](https:///)
+Find our second attempt to a fullstack website [here](http://www.mariefourriere.rf.gd/)
 
 
 
@@ -72,9 +72,10 @@ Here is an image of the database architecture
 # Improvements
 We wish to improve:
 
-* accessibility
-* some features are missing in pages 
-* functions are not all fully working
+* Add some real shapes instead of its name
+* Bonus task is missing 
+* Add a profile picture when creating a new user
+* The stat feature is also missing
  
 # Contributing
 Pull requests are mandatory. Our team was asked to make commits and pull request often to keep track of everybody's work.

@@ -5,7 +5,9 @@ if(isset($_POST['badgeName'])){
 if(isset($_POST['grantBadgeName'])) {
     grantBadgeToUser();
 }
-
+if(isset($_POST['firstname'])) {
+    createUser();
+}
 ?>
 
 
@@ -268,6 +270,7 @@ if(isset($_POST['grantBadgeName'])) {
                                     <label for="password">Password</label>
                                     <input type="password" name="password" class="form-control" required>
                                 </div>
+                                
 
                             </div>
 
