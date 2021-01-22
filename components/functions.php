@@ -86,10 +86,7 @@
     $cursor = createCursor();
     $query_users = $cursor->query("SELECT lastname, firstname, account_type FROM users WHERE account_type LIKE 'NORMIE'");
     $results_users = $query_users->fetchall(PDO::FETCH_ASSOC);
-  
-   // $id_users = $cursor->prepare('SELECT id_badge from badge');
-    //$id_users ->execute();
-   // $resultats = $id_users->fetchall();//selecrtionne tout les ids des badges
+
 
     return $results_users;
   }
@@ -166,7 +163,7 @@
   }
 
   function removeBadge($badge_id){
-    
+      
   }
 
   function grantBadgeToUser($badge_id, $user_id){
