@@ -29,7 +29,7 @@ ADMINs who can create/edit/delete badges and grant them.
 You must keep most of the logic outside of pages, into functions, for readability
 >BONUS: Organize badges by topics so you can display a progression
 
-Find our second attempt to a fullstack website [here](http://mariefourriere.rf.gd/)
+Find our second attempt to a fullstack website [here](http://www.mariefourriere.rf.gd/)
 
 
 
