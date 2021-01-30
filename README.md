@@ -31,6 +31,10 @@ You must keep most of the logic outside of pages, into functions, for readabilit
 
 Find our second attempt to a fullstack website [here](http://www.mariefourriere.rf.gd/)
 
+To access to the website:
+* ADMIN LOGIN: admin@example.com | PASSWORD: GraceHopper<3
+* NORMIE LOGIN: normie@example.com | PASSWORD: I<3PHP
+
 
 
 
